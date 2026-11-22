@@ -1,0 +1,488 @@
+:root {
+    --primary-color: #511623;
+    --primary-dark: #3a0f19;
+    --secondary-color: #eababa;
+    --bg-light: #fff6f6;
+    --accent-pink: #511623;
+    --border-pink: #f0e8ea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* HEADER & NAVBAR */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--primary-color);
+    padding: 1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(81, 22, 35, 0.15);
+}
+
+header .logo {
+    font-size: 2.6rem;
+    color: white;
+    font-weight: 700;
+}
+
+header .logo span {
+    color: var(--secondary-color);
+}
+
+header .navbar a {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 600;
+    margin: 0 1.2rem;
+    transition: 0.2s;
+}
+
+header .navbar a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+header #toggler, header .fa-bars {
+    display: none;
+}
+
+/* HERO SECTION */
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../image/background\ maroon.jpeg') no-repeat center center/cover;
+    padding: 0 9%;
+    margin-top: 6rem;
+}
+
+.home .content {
+    max-width: 60rem;
+    padding-top: 15rem;
+}
+
+.home .content h3 {
+    font-size: 4.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.home .content p {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+/* TOMBOL (semua maroon, hover pink pastel) */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2.2rem;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Tombol hero tetap pink supaya menonjol di atas foto */
+.home .btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.home .btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* MAIN CONTENT */
+main {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background-color: rgb(240, 224, 224);
+    border: 1px solid var(--border-pink);
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 15px rgba(81, 22, 35, 0.05);
+}
+
+.heading {
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+/* --- KATALOG PRODUK (FLEXBOX GRID 3 KOLOM) --- */
+.products .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.products .box {
+    flex: 1 1 30rem;
+    max-width: 320px;
+    background: #fff6f6;
+    border: 1px solid var(--border-pink);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(81, 22, 35, 0.15);
+}
+
+.products .box .image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    background-color: #fff6f6;
+}
+
+.products .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.products .box:hover .image img {
+    transform: scale(1.05);
+}
+
+.products .box .content h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.products .box .content ul {
+    text-align: left;
+    font-size: 1.35rem;
+    color: #fdefef;
+    margin-bottom: 1.5rem;
+    background: var(--primary-color);
+    padding: 10px 12px 10px 28px;
+    border-radius: 6px;
+    border: 1px solid var(--primary-color);
+    list-style-type: disc;
+}
+
+.products .box .content ul li {
+    margin-bottom: 5px;
+}
+
+.products .box .content ul li strong,
+.products .box .content ul li b {
+    color: var(--secondary-color);
+}
+
+.products .box .price {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Label di kartu produk */
+.badge {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .3rem 1rem;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+/* TENTANG KAMI */
+.about-section p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.about-grid h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.about-grid ul, .about-grid ol {
+    font-size: 1.5rem;
+    padding-left: 2rem;
+    color: var(--primary-color);
+}
+
+/* ULASAN / REVIEW */
+.review .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2rem;
+}
+
+.box-review {
+    background: #fff6f6;
+    border: 1px solid var(--border-pink);
+    padding: 2.5rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+.box-review p {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.box-review .user h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.box-review .user span {
+    font-size: 1.3rem;
+    color: #777;
+}
+
+.box-review .fa-quote-right {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 4rem;
+    color: var(--secondary-color);
+}
+
+/* KONTAK & FORM */
+.address-text {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.contact .row {
+    display: flex;
+    justify-content: center;
+}
+
+.contact form {
+    width: 100%;
+    max-width: 60rem;
+    background: #fff6f6;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-pink);
+}
+
+.contact form h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.box-input {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    outline: none;
+}
+
+.box-input:focus {
+    border-color: var(--primary-color);
+}
+
+.comment-card {
+    background: #fff6f6;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.comment-card h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.comment-card p {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4rem 9% 2rem 9%;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: .5rem;
+    display: inline-block;
+}
+
+.footer-section p, .footer-section li {
+    font-size: 1.4rem;
+    margin-bottom: .8rem;
+    list-style: none;
+}
+
+.footer-section a {
+    color: white;
+    transition: 0.2s;
+}
+
+.footer-section a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(234, 186, 186, 0.4);
+    padding-top: 1.5rem;
+}
+
+/* TOMBOL WHATSAPP MELAYANG */
+.wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary-color);
+    color: white;
+    padding: 1.2rem 2rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(81, 22, 35, 0.3);
+    z-index: 999;
+    transition: 0.2s;
+}
+
+.wa-float i {
+    margin-right: .6rem;
+    font-size: 1.8rem;
+}
+
+.wa-float:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* FONT JUDUL */
+header .logo,
+.home .content h3,
+.heading {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    header .fa-bars {
+        display: block;
+        font-size: 2.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--primary-color);
+        border-top: 1px solid var(--secondary-color);
+        flex-direction: column;
+        display: none;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    }
+
+    header #toggler:checked ~ .navbar {
+        display: flex;
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        color: white;
+        display: block;
+        text-align: center;
+    }
+
+    .home .content h3 {
+        font-size: 3rem;
+    }
+}
